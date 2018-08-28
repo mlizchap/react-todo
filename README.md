@@ -1,12 +1,12 @@
 ## Component Functionality
 ### App Component
-- [X] renders the input component
-- [ ] renders no todos items when state is empty
+- [ ] renders no todos items when there is no todo props
 - [ ] renders a list of todos items when there is todo props 
 ### Input Component 
-- [ ] renders an input box with a submit button to the screen
-- [ ] the user can enter text into the input 
-- [ ] when the user enters text the input state updates 
+- [X] renders to screen
+- [X] renders an input box with a submit button to the screen
+- [X] can enter text into the input 
+- [X] when the user enters text the input state updates 
 - [ ] when the user clicks submit a new Todo Item is rendered to the screen 
 ### Todo Item Component (edit mode)
 - [ ] when the state is "edit mode" an editable input area renders as well as a "save" and "cancel" button
