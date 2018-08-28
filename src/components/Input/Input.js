@@ -9,14 +9,19 @@ class Input extends Component {
 
     render() {
         return (
-            <div data-test="component-input">
+            <form data-test="component-input">
                 <input 
                     data-test="input" 
                     value={this.state.input}
                     onChange={(e) => this.setState({ input: e.target.value})}
                 />
-                <button data-test="submitBtn">Submit</button>
-            </div>
+                <button 
+                    data-test="submitBtn"
+                    onClick={this.handleSubmit}
+                >
+                    Submit
+                </button>
+            </form>
         );
     }
 }
