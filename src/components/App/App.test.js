@@ -3,7 +3,7 @@ import App from './App';
 import { shallow } from 'enzyme';
 
 test('renders list items when there is items as state', () => {
-    const todos = ['todo 1', 'todo 2']
+    const todos = [{name: 'todo 1', completed: false}, {name: 'todo 2', completed: false}]
     const wrapper = shallow(<App />);
     wrapper.setState({todos});
     expect(wrapper.find(`[data-test="todo"]`).length).toBe(2);

@@ -14,7 +14,7 @@ class App extends Component {
             <div data-test="component-app">
                 <Input />
                 {this.state.todos.map((todo) => {
-                    return <Todo key={todo} name={todo} data-test="todo" />
+                    return <Todo key={todo} name={todo.name} completed={todo.completed} data-test="todo" />
                 })}
             </div>
         );
