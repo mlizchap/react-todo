@@ -1,19 +1,43 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'; 
 
-import ReadMode from '../ReadMode/ReadMode';
-import EditMode from '../EditMode/EditMode';
-
 class Todo extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { edit: false }
+        this.state = { 
+            edit: false,
+        }
     }
 
-    renderReadMode = () => <ReadMode data-test="component-read-mode" /> 
+    renderBtns = () => {
+        return (
+            <div data-test="edit-delete-btns">
+                <button>edit</button>
+                <button>delete</button>
+            </div>
+        )
+    }
 
-    renderEditMode = () => <EditMode data-test="component-edit-mode" />
+    renderReadMode = () => {
+        return (
+            <div data-test="read-mode"
+                onMouseOver={() => this.setState({ showBtns: true })}  
+                onMouseLeave={() => this.setState({ showBtns: false })}  
+                style={{ color: this.props.completed ? 'red' : 'blue'}}>
+                {this.props.name} 
+                {(this.state.showBtns) ? this.renderBtns() : null }
+            </div>
+        )
+    }
+
+    renderEditMode = () => {
+        return (
+            <div data-test="edit-mode">
+            <input value={this.props.name}/>
+            </div>
+        )
+    }
 
     render() {
         return (!this.state.edit) 
