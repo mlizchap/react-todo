@@ -9,16 +9,16 @@
 - [X] when the user enters text the input state updates 
 ### Todo Item 
 - [X] the todo item has a name prop (string )and a completed prop (boolean)
-- [ ] when edit mode is false:
+- [X] when edit mode is false:
     - [X] the read mode todo list renders 
-    - [ ] when the read mode appears, the edit button and delete button appear on mouseover and disappear on mouseout
-    - [ ] when the "edit" button is clicked, the read mode switches to edit mode 
+    - [X] when the read mode appears, the edit button and delete button appear on mouseover and disappear on mouseout
+    - [X] when the "edit" button is clicked, the read mode switches to edit mode 
     - [ ] when the "delete" button is clicked, the item is removed from the screen and the state
     - [ ] when the user clicks on the todo item it is crossed out 
 - [ ] when the edit mode is true: 
     - [X] the edit mode renders - an input, a save button, and a cancel button 
     - [ ] when the save button is clicked without any text or is the same as before nothing happens
-    - [ ] when the cancel button is clicked in the edit mode todo component, the todo component goes back to "read mode"
+    - [X] when the cancel button is clicked in the edit mode todo component, the todo component goes back to "read mode"
 ### Integration Tests
 - [ ] a new todo list is rendered to the app component when the submit button is clicked in the input component
 - [ ] when the save button is clicked with text, the todo with the edited text, the state is updated in the app copmponent.

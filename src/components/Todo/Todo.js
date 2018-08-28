@@ -13,7 +13,7 @@ class Todo extends Component {
     renderBtns = () => {
         return (
             <div data-test="edit-delete-btns">
-                <button>edit</button>
+                <button data-test="edit-btn" onClick={() => this.setState({ edit: true })}>edit</button>
                 <button>delete</button>
             </div>
         )
@@ -24,7 +24,8 @@ class Todo extends Component {
             <div data-test="read-mode"
                 onMouseOver={() => this.setState({ showBtns: true })}  
                 onMouseLeave={() => this.setState({ showBtns: false })}  
-                style={{ color: this.props.completed ? 'red' : 'blue'}}>
+                style={{ color: this.props.completed ? 'red' : 'blue'}}
+            >
                 {this.props.name} 
                 {(this.state.showBtns) ? this.renderBtns() : null }
             </div>
@@ -34,7 +35,14 @@ class Todo extends Component {
     renderEditMode = () => {
         return (
             <div data-test="edit-mode">
-            <input value={this.props.name}/>
+                <input value={this.props.name}/>
+                <button data-test="save-btn">save</button>
+                <button 
+                    data-test="cancel-btn"
+                    onClick={() => this.setState({ edit: false })}
+                >
+                    cancel
+                </button>
             </div>
         )
     }
