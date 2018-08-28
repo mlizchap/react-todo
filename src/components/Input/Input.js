@@ -4,7 +4,7 @@ class Input extends Component {
     render() {
         return (
             <div data-test="component-input">
-                <input />
+
             </div>
         );
     }
