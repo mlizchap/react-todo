@@ -9,16 +9,17 @@ class Input extends Component {
     }
     render() {
         return (
-            <form onSubmit={(e) => {
+            <form className="form" onSubmit={(e) => {
                 e.preventDefault();
                 this.setState({ val: '' });
                 this.props.handleSubmit({name: this.state.val, completed: false});
             }}>
                 <input  
+                    className="form__input"
                     value={this.state.val}
                     onChange={(e) => this.setState({ val: e.target.value })}
                 />
-                <button type="submit">+</button>
+                <button className="form_submitBtn" type="submit">+</button>
             </form>
         );
     }
