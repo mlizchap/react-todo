@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
-
 import Input from '../Input/Input';
-import Todo from '../Todo/Todo';
+import TodoList from '../TodoList/TodoList'
 
 class App extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { todos: [] }
+        this.state = { 
+            todos: []
+         };
     }
-
     submitTodo = (todo) => {
-        this.setState({ todos: [...this.state.todos, {name: todo, completed: false }]})
+        this.setState({ todos: [...this.state.todos, todo]})
     }
-
+    handleClick = (name) => {
+        const todos = this.state.todos.map(todo => {
+            return (todo.name === name) ? {...todo, completed: !todo.completed} : todo 
+        })
+        this.setState({ todos });
+    }
     render() {
         return (
-            <div data-test="component-app">
-                <Input handleSubmit={(todo) => this.submitTodo(todo)} />
-                {this.state.todos.map((todo) => {
-                    return <Todo key={todo} name={todo.name} completed={todo.completed} data-test="todo" />
-                })}
+            <div>
+                <Input handleSubmit={this.submitTodo}/>
+                <TodoList todos={this.state.todos} handleClick={this.handleClick} />
             </div>
         );
     }
 }
 
 export default App;
+

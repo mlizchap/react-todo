@@ -7,16 +7,18 @@
 - [X] renders an input box with a submit button to the screen
 - [X] can enter text into the input 
 - [X] when the user enters text the input state updates 
-- [ ] when the user hits submit, the submit event handler is run
+- [X] when the user hits submit, the submit event handler is run with correct args
+- [ ] input clears when user hits submit
 ### Todo Item 
 - [X] the todo item has a name prop (string )and a completed prop (boolean)
-- [X] when edit mode is false:
-    - [X] the read mode todo list renders 
-    - [X] when the read mode appears, the edit button and delete button appear on mouseover and disappear on mouseout
+- [ ] when edit mode is false:
+    - [X] the read mode todo list renders with a paragraph, edit button and delete button
     - [X] when the "edit" button is clicked, the read mode switches to edit mode 
+    - [ ] when the "delete" button is clicked, handleDelete is called 
     - [ ] when the user clicks on the todo item it is crossed out 
 - [ ] when the edit mode is true: 
     - [X] the edit mode renders - an input, a save button, and a cancel button 
+    - [ ] the user can enter text into the input and state is updated
     - [ ] when the save button is clicked without any text or is the same as before nothing happens
     - [X] when the cancel button is clicked in the edit mode todo component, the todo component goes back to "read mode"
 ### Overall
