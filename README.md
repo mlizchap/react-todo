@@ -1,37 +1,6 @@
-## Component Functionality
-### App Component
-- [X] renders no todos items when there is no todo props
-- [X] renders a list of todos items when there is todo props 
-### Input Component 
-- [X] renders to screen
-- [X] renders an input box with a submit button to the screen
-- [X] can enter text into the input 
-- [X] when the user enters text the input state updates 
-- [X] when the user hits submit, the submit event handler is run with correct args
-- [ ] input clears when user hits submit
-### Todo Item 
-- [X] the todo item has a name prop (string )and a completed prop (boolean)
-- [ ] when edit mode is false:
-    - [X] the read mode todo list renders with a paragraph, edit button and delete button
-    - [X] when the "edit" button is clicked, the read mode switches to edit mode 
-    - [ ] when the "delete" button is clicked, handleDelete is called 
-    - [ ] when the user clicks on the todo item it is crossed out 
-- [ ] when the edit mode is true: 
-    - [X] the edit mode renders - an input, a save button, and a cancel button 
-    - [ ] the user can enter text into the input and state is updated
-    - [ ] when the save button is clicked without any text or is the same as before nothing happens
-    - [X] when the cancel button is clicked in the edit mode todo component, the todo component goes back to "read mode"
-### Overall
-- [X] when the user clicks submit, a new todo is rendered to the screen
-- [ ] when the user saves an edited text, the edited text replaces the old text
-- [ ] when the "delete" button is clicked, the item is removed from the application and the state
-
-
-
-
-
-
-
-
-
-
+## User stores 
+- [ ] User initially sees an input box and submit button 
+- [ ] As user submits todos, the user can see a list of todos on the screen 
+- [ ] the user can submit a todo and see it rendered to the screen 
+- [ ] the user can click a non crossed-out todo and it is crossed out 
+- [ ] the user can click a crossed out todo and it is no longer crossed out.
