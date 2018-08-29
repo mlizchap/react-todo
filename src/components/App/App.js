@@ -9,10 +9,15 @@ class App extends Component {
 
         this.state = { todos: [] }
     }
+
+    submitTodo = (todo) => {
+        this.setState({ todos: [...this.state.todos, {name: todo, completed: false }]})
+    }
+
     render() {
         return (
             <div data-test="component-app">
-                <Input />
+                <Input handleSubmit={(todo) => this.submitTodo(todo)} />
                 {this.state.todos.map((todo) => {
                     return <Todo key={todo} name={todo.name} completed={todo.completed} data-test="todo" />
                 })}

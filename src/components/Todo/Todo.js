@@ -24,7 +24,7 @@ class Todo extends Component {
             <div data-test="read-mode"
                 onMouseOver={() => this.setState({ showBtns: true })}  
                 onMouseLeave={() => this.setState({ showBtns: false })}  
-                style={{ color: this.props.completed ? 'red' : 'blue'}}
+                style={{ color: this.props.completed ? 'gray' : 'blue'}}
             >
                 {this.props.name} 
                 {(this.state.showBtns) ? this.renderBtns() : null }

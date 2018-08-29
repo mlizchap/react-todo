@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Input from './Input';
 
 test('renders to screen', () => {
@@ -31,4 +31,15 @@ test('can enter text into the input', () => {
     expect(userState).toEqual('abc');
 })
 
+it('submit handler runs when form is submitted with correct args', () => {
+    const submitMock = jest.fn();
+    const props = {
+        handleSubmit: submitMock
+    }
+    const wrapper = mount(<Input handleSubmit={submitMock} />);
+    wrapper.setState({ input: 'do this' });
+    wrapper.find(`[data-test="component-input"]`).simulate("submit",  { preventDefault() {} });
 
+    expect(props.handleSubmit).toHaveBeenCalledTimes(1);
+    expect(props.handleSubmit).toBeCalledWith('do this');
+})

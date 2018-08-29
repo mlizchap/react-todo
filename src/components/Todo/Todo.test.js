@@ -3,6 +3,12 @@ import Todo from './Todo';
 import checkPropTypes from 'check-prop-types';
 import { shallow } from 'enzyme';
 
+let wrapper;
+beforeEach(() => {
+    const props = { name: "do this", completed: false }
+    wrapper = shallow(<Todo {...props} />);
+})
+
 test('the todo list has a name prop (string )and a completed prop (boolean)', () => {
     const propError = checkPropTypes(
         Todo.propTypes,
@@ -12,12 +18,6 @@ test('the todo list has a name prop (string )and a completed prop (boolean)', ()
     );
     expect(propError).toBeUndefined;
 });
-
-let wrapper;
-beforeEach(() => {
-    const props = { name: "do this", completed: false }
-    wrapper = shallow(<Todo {...props} />);
-})
 
 describe('read or edit mode renders based on state', () => {
     it('when edit mode is false, the read mode todo list renders', () => {
