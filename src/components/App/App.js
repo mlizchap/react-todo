@@ -13,7 +13,7 @@ class App extends Component {
     submitTodo = (todo) => {
         this.setState({ todos: [...this.state.todos, todo]})
     }
-    handleClick = (name) => {
+    markCompleted = (name) => {
         const todos = this.state.todos.map(todo => {
             return (todo.name === name) ? {...todo, completed: !todo.completed} : todo 
         })
@@ -23,7 +23,7 @@ class App extends Component {
         return (
             <div>
                 <Input handleSubmit={this.submitTodo}/>
-                <TodoList todos={this.state.todos} handleClick={this.handleClick} />
+                <TodoList todos={this.state.todos} handleClick={this.markCompleted} />
             </div>
         );
     }
