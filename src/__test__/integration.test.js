@@ -47,6 +47,23 @@ it('updates state when a new todo is submitted and renders input to screen', () 
     expect(listItem.text()).toBe(userInput)
 })
 
+describe('todo styling for completion/imcompletion', () => {
+    it('crosses out the word when a todo is marked a completed', () => {
+        wrapper.setState({ todos: [{name: 'thing 1', completed: false}] })
+        const todoItem = wrapper.find('.list__item');
+        todoItem.simulate('click');
+        expect(wrapper.find('.list__item').get(0).props.style.textDecoration).toBe('line-through');
+    });
+    it('uncrosses a todo item when a completed item is clicked', () => {
+        wrapper.setState({ todos: [{name: 'thing 1', completed: true}] })
+        const todoItem = wrapper.find('.list__item');
+        todoItem.simulate('click');
+        expect(wrapper.find('.list__item').get(0).props.style.textDecoration).toBe('none');
+
+    })
+})
+
+
 
 
 
